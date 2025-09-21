@@ -16,13 +16,22 @@ async function main() {
   //   },
   // });
   // console.log(userData);
+  // const findUserByID = await prisma.user.findUnique({
+  //   where: {
+  //     id: 3,
+  //   },
+  // });
+  // console.log(findUserByID);
 
-  const findUserByID = await prisma.user.findUnique({
+  const updateData = await prisma.user.update({
     where: {
-      id: 3,
+      id: 2,
+    },
+    data: {
+      email: "ahmed@gmail.com",
     },
   });
-  console.log(findUserByID);
+  console.log(updateData);
 }
 
 main();
